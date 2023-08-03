@@ -7,7 +7,7 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.legacy-jar -t quarkus/beers_quarkus_gradle-legacy-jar .
+# docker build -f src/main/docker/Dockerfile.legacy-jar -t gerber2816/beers_quarkus_gradle-legacy-jar .
 #
 # Then run the container using:
 #
