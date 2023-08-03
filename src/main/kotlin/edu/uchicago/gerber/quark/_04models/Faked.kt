@@ -1,7 +1,6 @@
-package edu.uchicago.gerber.quark._04models
+package edu.uchicago.gerber.quarkus._04models
 
 import net.datafaker.Faker
-import edu.uchicago.gerber.quarkus._04models.Beer
 import org.bson.types.ObjectId
 
 object Faked {

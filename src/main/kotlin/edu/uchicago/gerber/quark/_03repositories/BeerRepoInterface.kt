@@ -1,9 +1,9 @@
-package edu.uchicago.gerber.quark._03repositories
+package edu.uchicago.gerber.quarkus._03repositories
 
 
 import edu.uchicago.gerber.quarkus._04models.Beer
 import io.quarkus.mongodb.panache.kotlin.PanacheQuery
-import org.bson.types.ObjectId
+
 
 interface BeerRepoInterface {
 

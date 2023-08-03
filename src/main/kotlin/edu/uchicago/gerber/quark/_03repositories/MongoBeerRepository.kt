@@ -1,8 +1,8 @@
 package edu.uchicago.gerber.quarkus._03repositories
 
 
-import edu.uchicago.gerber.quark._03repositories.BeerRepoInterface
-import edu.uchicago.gerber.quark._04models.Faked
+import edu.uchicago.gerber.quarkus._03repositories.BeerRepoInterface
+import edu.uchicago.gerber.quarkus._04models.Faked
 import edu.uchicago.gerber.quarkus._04models.Beer
 import io.quarkus.mongodb.panache.kotlin.PanacheMongoRepository
 import io.quarkus.mongodb.panache.kotlin.PanacheQuery

@@ -15,25 +15,16 @@ val quarkusPlatformVersion: String by project
 
 dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
-    //implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
 
     implementation("io.quarkus:quarkus-smallrye-openapi")
     implementation("io.quarkus:quarkus-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
-    //implementation("io.quarkus:quarkus-resteasy-reactive")
     implementation("io.rest-assured:rest-assured")
-
-
-
-    implementation("net.datafaker:datafaker:1.5.0")
+    implementation("net.datafaker:datafaker:1.8.1")
     implementation("io.quarkus:quarkus-mongodb-client:3.2.3.Final")
     implementation("io.quarkus:quarkus-mongodb-panache-kotlin:3.2.3.Final")
     implementation("io.quarkus:quarkus-resteasy-jackson")
-
-
-    //implementation("software.amazon.awssdk:url-connection-client")
-
 
 
     testImplementation("io.quarkus:quarkus-junit5")
