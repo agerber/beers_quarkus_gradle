@@ -1,4 +1,4 @@
-package edu.uchicago.gerber.quark
+package edu.uchicago.gerber.quarkus
 
 import io.quarkus.test.junit.QuarkusIntegrationTest
 
