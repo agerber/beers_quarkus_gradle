@@ -64,6 +64,8 @@ go to a browser and type: 18.216.139.168:8080/beers
 
 ## DEPLOY TO LIGHTSAIL CONTAINER
 
+See video on Deploying to Lightsail Container
+
 
 
 
