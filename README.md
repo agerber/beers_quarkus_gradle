@@ -1,8 +1,28 @@
 # beers_quarkus_gradle
 
+## RUN LOCALLY
+
+Make sure docker desktop is running. Spin up a mongo db locally.
+
+> docker run -d -it --rm  -p 27017:27017 mongo
+
+run the beers_quarkus_gradle.main run config. 
+
+
+## VIEW SWAGGER LOCALLY
+
+http://localhost:8080/q/swagger-ui/
+
+
+## VIEW MICROSERVICE LOCALLY
+
+http://localhost:8080/beers
+
+
 ## BUILD INSTRUCTIONS
 //from terminal, in root of this project, use gradle wrapper to clean build and exclude tests
 ./gradlew clean build -x test
+
 
 //build a linux-image using the jvm Dockerfile. You must replace gerber2816 with your docker-hub-name
 docker build --platform linux/amd64 -f src/main/docker/Dockerfile.jvm -t gerber2816/beers_quarkus_gradle-jvm .
