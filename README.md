@@ -26,15 +26,15 @@ http://localhost:8080/beers
 
 ## BUILD INSTRUCTIONS
 //from terminal, in root of this project, use gradle wrapper to clean build and exclude tests
-./gradlew clean build -x test
+> ./gradlew clean build -x test
 
 
 //build a linux-image using the jvm Dockerfile. You must replace gerber2816 with your docker-hub-name
-docker build --platform linux/amd64 -f src/main/docker/Dockerfile.jvm -t gerber2816/beers_quarkus_gradle-jvm .
+> docker build --platform linux/amd64 -f src/main/docker/Dockerfile.jvm -t gerber2816/beers_quarkus_gradle-jvm .
 
 ## PUSH INSTRUCTIONS
 //push to docker-hub. You must replace gerber2816 with your docker-hub-name
-docker push gerber2816/beers_quarkus_gradle-jvm
+> docker push gerber2816/beers_quarkus_gradle-jvm
 
 ## DEPLOY TO LIGHTSAIL INSTANCE
 
