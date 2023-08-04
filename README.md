@@ -1,5 +1,10 @@
 # beers_quarkus_gradle
 
+
+
+This project can be found here: https://github.com/agerber/beers_quarkus_gradle
+
+
 ## RUN LOCALLY
 
 Make sure docker desktop is running. Spin up a mongo db locally.
