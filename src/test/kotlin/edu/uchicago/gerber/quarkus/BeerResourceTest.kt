@@ -1,6 +1,6 @@
-package edu.uchicago.gerber.quark
+package edu.uchicago.gerber.quarkus
 
-import edu.uchicago.gerber.quark._04models.Faked
+import edu.uchicago.gerber.quarkus._04models.Faked
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import org.hamcrest.CoreMatchers.`is`
