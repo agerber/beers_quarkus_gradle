@@ -1,5 +1,77 @@
 # beers_quarkus_gradle
 
+## BUILD INSTRUCTIONS
+//from terminal, in root of this project, use gradle wrapper to clean build and exclude tests
+./gradlew clean build -x test
+
+//build a linux-image using the jvm Dockerfile. You must replace gerber2816 with your docker-hub-name
+docker build --platform linux/amd64 -f src/main/docker/Dockerfile.jvm -t gerber2816/beers_quarkus_gradle-jvm .
+
+## PUSH INSTRUCTIONS
+//push to docker-hub. You must replace gerber2816 with your docker-hub-name
+docker push gerber2816/beers_quarkus_gradle-jvm
+
+## DEPLOY TO LIGHTSAIL INSTANCE
+
+Log into lightsail. Select Instances on left menu. Select Linux/Unix || OS Only  || Amazon Linux 202X 
+At minimum, select the $5 per month option (with 3 months free). Anything less will not work. 
+Leave all other options as default, and click 'Create instance'
+
+Click on the instance name.
+
+Note the PUBLIC IP address and make a note of this: e.g. 18.216.139.168
+
+Go to Networking || IPv4 Firewall || Add rule
+Custom TCP 8080
+click Create.
+
+
+
+Click the elipses and Connect menu option. 
+Once inside the linux terminal, switch to root user
+
+> sudo su
+
+> yum install docker -y
+
+//if you need to stop it later, you can run: service docker stop
+> service docker start
+
+//check that it's running
+> service docker status
+
+> docker pull mongo:latest
+
+//replace gerber2816 with your docker-hub-name
+> docker pull gerber2816/beers_quarkus_gradle-jvm
+
+//confirm that you have both locally
+> docker images
+
+//run mongo in a docker container in a detached-state on host network
+> docker run -d --net=host  -p 27017:27017 mongo
+
+
+//run quarkus in a docker container in a detached-state on host network. replace gerber2816 with your docker-hub-name
+> docker run -d --net=host  -p 8080:8080 gerber2816/beers_quarkus_gradle-jvm
+
+//confirm that both are running
+> docker ps
+
+
+From the noted IP address above (yours will be different)
+go to a browser and type: 18.216.139.168:8080/beers
+
+## DEPLOY TO LIGHTSAIL CONTAINER
+
+
+
+
+
+
+
+## ORIGINAL README BELOW >>>>>>>>>>>>>>>>>>>>>>
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
