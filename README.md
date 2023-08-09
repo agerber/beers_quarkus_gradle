@@ -9,7 +9,14 @@ This project can be found here: https://github.com/agerber/beers_quarkus_gradle
 
 Make sure docker desktop is running. Spin up a mongo db locally.
 
-> docker run -d -it --rm  -p 27017:27017 mongo
+> docker run -d --rm  -p 27017:27017 mongo
+
+
+Edit the beers_quarkus_gradle.main run config. Go to Environment || Configuration || Environmental variables:
+Add this
+
+MONGO_DB_URL=mongodb://localhost:27017
+
 
 run the beers_quarkus_gradle.main run config. 
 

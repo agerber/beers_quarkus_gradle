@@ -7,6 +7,7 @@ import io.quarkus.mongodb.panache.kotlin.PanacheQuery
 import jakarta.inject.Inject
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
+import org.bson.json.JsonObject
 import java.lang.Exception
 
 
@@ -40,6 +41,13 @@ class BeerResource {
     @Path("{id}")
     fun readById(@PathParam("id") id: String): Beer {
         return beerService.readById(id)
+
+    }
+
+     @GET
+     @Path("/count")
+    fun count(): String{
+        return """{"beers":"${beerService.count()}"}"""
 
     }
 

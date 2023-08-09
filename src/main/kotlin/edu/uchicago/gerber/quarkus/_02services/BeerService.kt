@@ -52,11 +52,11 @@ class BeerService  {
         return interfaceRepository._findAll()
 
     }
-    @PreDestroy
-    fun purgeDatabase(){
-        //WARNING - DO NOT INCLUDE THIS IN PRODUCTION
-        interfaceRepository._deleteAll()
-    }
+//    @PreDestroy
+//    fun purgeDatabase(){
+//        //WARNING - DO NOT INCLUDE THIS IN PRODUCTION
+//        interfaceRepository._deleteAll()
+//    }
 
 
 
