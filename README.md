@@ -12,13 +12,14 @@ Make sure docker desktop is running. Spin up a mongo db locally.
 > docker run -d --rm  -p 27017:27017 mongo
 
 
-Edit the beers_quarkus_gradle.main run config. Go to Environment || Configuration || Environmental variables:
-Add this
+run the beers_quarkus_gradle [quarkusDev].run.xml run config in the .run directory of the root
 
-MONGO_DB_URL=mongodb://localhost:27017
+if you do see this file, you can create your own local run configuration.
 
+1/ make sure that you choose gradle build.
+2/ use quarkusDev as the task you are running.
+3/ add MONGO_DB_URL=mongodb://localhost:27017 under environmental variables. 
 
-run the beers_quarkus_gradle.main run config. 
 
 
 ## VIEW SWAGGER LOCALLY
@@ -94,17 +95,14 @@ Once inside the linux terminal, switch to root user
 From the noted IP address above (yours will be different)
 go to a browser and type: 18.216.139.168:8080/beers
 
-## DEPLOY TO LIGHTSAIL CONTAINER
+## DEPLOY TO LIGHTSAIL DOCKER CONTAINER
 
 See video on Deploying to Lightsail Container
 
 
 
 
-
-
-
-## ORIGINAL README BELOW >>>>>>>>>>>>>>>>>>>>>>
+## ORIGINAL (CREATED BY THE QUARKUS FRAMEWORK) README BELOW >>>>>>>>>>>>>>>>>>>>>>
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
