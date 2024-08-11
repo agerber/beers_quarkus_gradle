@@ -17,7 +17,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty
 class BeerService  {
 
     @Inject
-    @ConfigProperty(name = "repository.type")
+    @ConfigProperty(name = "repository.type", defaultValue = "some")
     private lateinit var repositoryType: String
 
     //contains the instantiated object stored an interface reference

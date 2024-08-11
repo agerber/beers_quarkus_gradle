@@ -7,6 +7,7 @@ import edu.uchicago.gerber.quarkus._04models.Beer
 import io.quarkus.mongodb.panache.kotlin.PanacheMongoRepository
 import io.quarkus.mongodb.panache.kotlin.PanacheQuery
 import io.quarkus.runtime.StartupEvent
+import jakarta.annotation.PostConstruct
 import jakarta.annotation.PreDestroy
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.enterprise.event.Observes
@@ -16,9 +17,7 @@ import org.bson.types.ObjectId
 
 class MongoBeerRepository : PanacheMongoRepository<Beer>, BeerRepoInterface {
 
-    //this will get fired when the quarkus microservice starts
-    fun onStart(@Observes ev: StartupEvent?) {
-
+    init {
         val list = mutableListOf<Beer>()
         repeat(20) { list.add(Faked.genRawEntity()) }
         persist(list)
@@ -27,9 +26,7 @@ class MongoBeerRepository : PanacheMongoRepository<Beer>, BeerRepoInterface {
         val beer: Beer? = findById(ObjectId(Faked.FAKE_ID))
         if (beer == null) persist(Faked.genTestBeer(Faked.FAKE_ID))
 
-
     }
-
 
     //CREATE
 
