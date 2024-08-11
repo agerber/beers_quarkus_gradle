@@ -25,6 +25,7 @@ dependencies {
     implementation("io.quarkus:quarkus-mongodb-client:3.2.3.Final")
     implementation("io.quarkus:quarkus-mongodb-panache-kotlin:3.2.3.Final")
     implementation("io.quarkus:quarkus-resteasy-jackson")
+    implementation ("io.quarkus:quarkus-arc")
 
 
     testImplementation("io.quarkus:quarkus-junit5")
