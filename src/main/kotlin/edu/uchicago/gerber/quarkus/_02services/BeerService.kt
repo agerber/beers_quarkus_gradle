@@ -17,23 +17,18 @@ import org.eclipse.microprofile.config.inject.ConfigProperty
 class BeerService  {
 
     @Inject
-    @ConfigProperty(name = "repository.type", defaultValue = "mongo")
-    lateinit var repositoryType: String
-
-    @Inject
-    lateinit var mongoRepo: MongoBeerRepository
-
-    @Inject
-    lateinit var someRepo: SomeBeerRepository
+    @ConfigProperty(name = "repository.type")
+    private lateinit var repositoryType: String
 
     //contains the instantiated object stored an interface reference
-    lateinit var interfaceRepository: BeerRepoInterface
+    private lateinit var interfaceRepository: BeerRepoInterface
 
     @PostConstruct
     fun initialize(){
         interfaceRepository = when (repositoryType) {
-            "mongo" -> mongoRepo
-            else -> someRepo
+            "mongo" -> MongoBeerRepository()
+            "some" -> SomeBeerRepository()
+            else -> SomeBeerRepository()
         }
     }
     fun create(beer: Beer){

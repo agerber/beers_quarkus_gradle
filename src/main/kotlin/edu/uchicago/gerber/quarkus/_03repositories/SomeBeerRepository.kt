@@ -7,7 +7,7 @@ import jakarta.enterprise.context.ApplicationScoped
 
 import org.bson.types.ObjectId
 
-@ApplicationScoped
+
 class SomeBeerRepository: BeerRepoInterface {
 
 

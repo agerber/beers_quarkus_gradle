@@ -13,7 +13,7 @@ import jakarta.enterprise.event.Observes
 
 import org.bson.types.ObjectId
 
-@ApplicationScoped
+
 class MongoBeerRepository : PanacheMongoRepository<Beer>, BeerRepoInterface {
 
     //this will get fired when the quarkus microservice starts
