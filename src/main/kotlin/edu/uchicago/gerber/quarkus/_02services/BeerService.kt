@@ -4,11 +4,10 @@ package edu.uchicago.gerber.quarkus._02services
 
 import edu.uchicago.gerber.quarkus._03repositories.BeerRepoInterface
 import edu.uchicago.gerber.quarkus._03repositories.MongoBeerRepository
-import edu.uchicago.gerber.quarkus._03repositories.SomeBeerRepository
+import edu.uchicago.gerber.quarkus._03repositories.FakedBeerRepository
 import edu.uchicago.gerber.quarkus._04models.Beer
 import io.quarkus.mongodb.panache.kotlin.PanacheQuery
 import jakarta.annotation.PostConstruct
-import jakarta.annotation.PreDestroy
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
 import org.eclipse.microprofile.config.inject.ConfigProperty
@@ -17,7 +16,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty
 class BeerService  {
 
     @Inject
-    @ConfigProperty(name = "repository.type", defaultValue = "some")
+    @ConfigProperty(name = "repository.type", defaultValue = "faked")
     private lateinit var repositoryType: String
 
     //contains the instantiated object stored an interface reference
@@ -27,8 +26,8 @@ class BeerService  {
     fun initialize(){
         interfaceRepository = when (repositoryType) {
             "mongo" -> MongoBeerRepository()
-            "some" -> SomeBeerRepository()
-            else -> SomeBeerRepository()
+            "faked" -> FakedBeerRepository()
+            else -> FakedBeerRepository()
         }
     }
     fun create(beer: Beer){

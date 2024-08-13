@@ -3,12 +3,9 @@ package edu.uchicago.gerber.quarkus._03repositories
 import edu.uchicago.gerber.quarkus._04models.Faked
 import edu.uchicago.gerber.quarkus._04models.Beer
 import io.quarkus.mongodb.panache.kotlin.PanacheQuery
-import jakarta.enterprise.context.ApplicationScoped
-
-import org.bson.types.ObjectId
 
 
-class SomeBeerRepository: BeerRepoInterface {
+class FakedBeerRepository: BeerRepoInterface {
 
 
     //CREATE
